@@ -1,0 +1,98 @@
+%pr {
+    position: relative;
+}
+%pa {
+    position: absolute;
+    content : '';
+}
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+%center {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50% , -50%));
+    position: absolute;
+    content: "";
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+.pt-120 {
+    padding-top: 80px;
+}
+.pb-120 {
+    padding-bottom: 80px;
+}
+.pt-60 {
+    padding-top: 40px;
+}
+.pb-60 {
+    padding-bottom: 40px;
+}
+@include breakpoint(lg) {
+    .pt-120 {
+        padding-top: 120px;
+    }
+    .pb-120 {
+        padding-bottom: 120px;
+    }
+    .pt-60 {
+        padding-top: 60px;
+    }
+    .pb-60 {
+        padding-bottom: 60px;
+    }
+}
+.rtl {
+    direction: rtl;
+}
+.ltr {
+    direction: ltr;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    display: none;
+    &.active {
+        display: block;
+        animation-name: fadeIn;
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        animation-duration: .3s;
+        -webkit-animation-duration: .3s;
+        -moz-animation-duration: .3s;
+    }
+}
+
+.section-title {
+    .cate {
+        font-family: $heading;
+        margin-bottom: 15px;
+        display: inline-block;
+        color: $base;
+    }
+    .title {
+        margin-bottom: 25px;
+    }
+    margin-bottom: 30px;
+    @include breakpoint(md) {
+        margin-bottom: 45px;
+    }
+}
+.heading--fonts {
+    font-family: $heading;
+}
+.body--fonts {
+    font-family: $body;
+}

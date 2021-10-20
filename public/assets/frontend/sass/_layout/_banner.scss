@@ -1,0 +1,82 @@
+/*Banner Section Starts Here*/
+.banner-section {
+    padding: 300px 0 260px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    &::before {
+        inset: 0;
+        @extend %pa;
+        background: linear-gradient(to top, rgba($title, .9), rgba(#000, .9));
+        z-index: 2;
+    }
+    .container {
+        position: relative;
+        z-index: 9;
+    }
+    @include breakpoint(max-xl) {
+        padding: 200px 0;
+    }
+    @include breakpoint(max-sm) {
+        padding: 150px 0;
+    }
+}
+.banner-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    color: $light-color;
+    .banner-title {
+        margin-bottom: 30px;
+    }
+    .banner-txt {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 35px;
+    }
+}
+.btn__grp {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -5px;
+    .cmn--btn {
+        margin: 4px;
+        padding: 10px 30px;
+        @include border-radius(35px);
+        &:nth-of-type(even) {
+            color: $white;
+            background: transparent;
+            border-color: rgba($white, .1);
+            &:hover {
+                background: $base;
+            }
+        }
+    }
+}
+.hero-section {
+    padding: 170px 0 80px;
+    background: $title;
+}
+.hero-content {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    .title {
+        color: $white;
+        &:not(:last-child) {margin-bottom: 20px;}
+    }
+    color: $light-color;
+}

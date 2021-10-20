@@ -1,0 +1,103 @@
+.video--btn {
+    display: block;
+    position: relative;
+    z-index: 1; 
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    color: $white;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 50%;
+    background: $base;
+    &::before, 
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        color: $white;
+        background: $base;
+        opacity: 0.15;
+        z-index: -10; 
+    }
+    &:hover {
+        color: $white;
+    }
+    &.btn--white {
+        background: $white;
+        color: $base;
+        &::after, &::before {
+            background: $white;
+        }
+    }
+}
+@media (min-width: 576px) {
+    .video--btn {
+        width: 70px;
+        height: 70px;
+        line-height: 68px;
+        font-size: 30px;
+    } 
+}
+.video--btn::before {
+    z-index: -10;
+    -webkit-animation: inner-ripple 2000ms linear infinite;
+    -moz-animation: inner-ripple 2000ms linear infinite;
+    animation: inner-ripple 2000ms linear infinite; 
+}
+.video--btn::after {
+    z-index: -10;
+    -webkit-animation: outer-ripple 2000ms linear infinite;
+    -moz-animation: outer-ripple 2000ms linear infinite;
+    animation: outer-ripple 2000ms linear infinite; 
+}
+.cmn--btn {
+    font-family: $heading;
+    position: relative;
+    color: $white;
+    border-radius: 25px;
+    width: auto;
+    font-weight: 500;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    padding: 10px 25px;
+    overflow: hidden;
+    background: $base;
+    text-decoration: none;
+    border: 1px solid rgba($base, .2);
+    &:hover {
+        color: $white;
+        background: transparent;
+        border-color: rgba($white, .1);
+        &::before {
+            @include transform(scaleX(1));
+        }
+    }
+    &.btn--white {
+        background: $white;
+        color: $title;
+        border: none;
+    }
+}
+button.cmn--btn {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+    &:hover {
+        background: $base;
+    }
+}
+.btn.cmn--btn {
+    outline: none;
+    box-shadow: none;
+    &:hover {
+        color: $title;
+        border-color: rgba($title, .1);
+    }
+}

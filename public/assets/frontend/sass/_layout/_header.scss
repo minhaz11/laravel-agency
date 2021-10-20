@@ -1,0 +1,240 @@
+.header-top {
+    background: $base;
+    .item {
+        a {
+            font-size: 14px;
+            color: $white;
+        }
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+    .social-icons {
+        li {
+            a {
+                font-size: 16px;
+                color: $white;
+            }
+        }
+    }
+}
+header {
+    position: relative;
+    &.active {
+        .header-bottom {
+            position: fixed;
+            top: 0;
+            background: $title;
+        }
+    }
+}
+.header-bottom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    border-bottom: 1px solid rgba($base, .2);
+}
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    .logo {
+        display: block;
+        img {
+            width: 100%;
+            height: 30px;
+            object-fit: contain;
+            object-position: left;
+        }
+    }
+    @include breakpoint(max-lg) {
+        padding: 20px 0;
+    }
+}
+.menu {
+    li {
+        a {
+            font-family: $heading;
+            font-weight: 400;
+            color: $white
+        }
+    }
+    @extend %flex;
+    align-items: center;
+    @include breakpoint(lg) {
+        li {
+            padding: 10px;
+            .submenu {
+                position: absolute;
+                background: $title;
+                top: 100%;
+                left: 0;
+                z-index: 99;
+                width: 200px;
+                @include transform(translateY(10px));
+                @include transition($transition);
+                visibility: hidden;
+                opacity: 0;
+                li {
+                    padding: 0;
+                    a {
+                        padding: 5px 10px;
+                        display: flex;
+                        align-items: center;
+                        border-top: 1px solid rgba($color: $white, $alpha: .1);
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        justify-content: space-between;
+                        font-size: 14px;
+                        &:hover {
+                            background: $base;
+                            color: $white;
+                            border-color: $base;
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            border-bottom: 1px solid rgba($color: $white, $alpha: .1);
+                        }
+                    }
+                    .submenu {
+                        top: 0;
+                        left: 100%;
+                    }
+                }
+            }
+            &:hover {
+                >.submenu {
+                    @include transform(translateY(0));
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            .cmn--btn {
+                display: inline-flex;
+            }
+        }
+        @include breakpoint(max-lg) {
+            li {
+                width: 100%;
+                a {
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    @include breakpoint(max-lg) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 130px);
+        z-index: 9;
+        background-color: $title;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba($white, .08);
+        padding: 0 0 10px 0;
+        @include transition($transition);
+        @include transform(scaleY(0));
+        transform-origin: top;
+        li {
+            width: 100%;
+            padding: 0;
+            a {
+                display: flex;
+                align-items: center;
+                border-top: 1px solid rgba($color: $white, $alpha: .1);
+                font-weight: 500;
+                text-transform: capitalize;
+                justify-content: space-between;
+                color: $white;
+                &:not(.cmn--btn) {
+                padding: 5px 10px;
+                }
+                &:hover {
+                    background: $base;
+                    color: $white;
+                    border-color: $base;
+                }
+                &.cmn--btn {
+                    display: inline-flex;
+                    color: $white;
+                    border-top: none;
+                    margin: 10px 20px;
+                }
+            }
+            .submenu {
+                display: none;
+                padding-left: 20px;
+                li {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        &.active {
+            @include transform(scaleY(1));
+        }
+    }
+}
+.menu-item-has-children {
+    position: relative;
+    >a {
+        @extend %flex;
+        align-items: center;
+        &::after {
+            font-family: "Line Awesome Free";
+            font-weight: 600;
+            content: "\f107";
+            margin-left: 5px;
+        }
+    }
+}
+/*Header Bar Starts*/
+.header-bar {
+    position: relative;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    margin-left: auto;
+    span {
+        position: absolute;
+        display: inline-block;
+        height: 3px;
+        width: 100%;
+        -webkit-transition: all ease 0.3s;
+        -moz-transition: all ease 0.3s;
+        transition: all ease 0.3s;
+        background-color: $white;
+        left: 0;
+        &:first-child {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 52%;
+            transform: translateY(-65%);
+        }
+        &:last-child {
+            bottom: 0;
+        }
+    }
+    &.active span {
+        &:first-child {
+            -webkit-transform: rotate(45deg) translate(3px, 9px);
+            -ms-transform: rotate(45deg) translate(3px, 9px);
+            transform: rotate(45deg) translate(3px, 9px);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:last-child {
+            -webkit-transform: rotate(-45deg) translate(3px, -9px);
+            -ms-transform: rotate(-45deg) translate(3px, -9px);
+            transform: rotate(-45deg) translate(3px, -9px);
+        }
+    }
+}
