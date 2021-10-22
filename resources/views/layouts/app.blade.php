@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('public')}}/assets/vendors/bootstrap-icons/bootstrap-icons.css">
    
     <link rel="stylesheet" href="{{asset('public')}}/assets/css/app.css">
-    <link rel="shortcut icon" href="{{asset('public')}}/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{logo()['fav']}}" type="image/x-icon">
     @stack('style-lib')
     @stack('style')
 </head>

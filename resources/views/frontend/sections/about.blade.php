@@ -26,37 +26,24 @@
             <div class="col-lg-6 col-xl-7 col-xxl-6">
                 <div class="about-content">
                     <div class="section-title wow fadeInUp">
-                        <span class="cate">About Us</span>
-                        <h2 class="title">We are more than just a Digital Start-Up Agency.</h2>
+                        <span class="cate">{{$about->title}}</span>
+                        <h2 class="title">{{$about->heading}}</h2>
                         <p>
-                            We are AppDevs. We create award - winning websites, remarkable brands and cutting - edge apps. Reiciendis impedit optio beatae. Libero possimus ducimus, dignissimos iste neque officiis eius architecto distinctio. Nam consequuntur quisquam autem, temporibus iure pariatur neque! Provident fugiat tempora repudiandae id quisquam perspiciatis!
+                            {{$about->short_details}}
                         </p>
                     </div>
                     <ul class="f-boxes">
+                        @foreach ($about->elements as $item)
                         <li>
                             <div class="item wow fadeInUp">
                                 <div class="icon">
-                                    <i class="lab la-think-peaks"></i>
+                                    {!! $item->icon !!}
                                 </div>
-                                <h6 class="subtitle">Pixel Perfect</h6>
+                                <h6 class="subtitle">{{$item->title}}</h6>
                             </div>
                         </li>
-                        <li>
-                            <div class="item wow fadeInUp" data-wow-delay=".4s">
-                                <div class="icon">
-                                    <i class="las la-fill-drip"></i>
-                                </div>
-                                <h6 class="subtitle">Creative Design</h6>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item wow fadeInUp" data-wow-delay=".6s">
-                                <div class="icon">
-                                    <i class="las la-code"></i>
-                                </div>
-                                <h6 class="subtitle">High Performance</h6>
-                            </div>
-                        </li>
+                        @endforeach
+                        
                     </ul>
                 </div>
             </div>

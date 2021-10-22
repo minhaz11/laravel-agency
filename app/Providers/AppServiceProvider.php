@@ -30,5 +30,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('link', function ($expression) {
             return "<?php echo activeLink($expression); ?>";
         });
+        Blade::directive('subLink', function ($expression) {
+            return "<?php echo subMenu($expression); ?>";
+        });
     }
 }

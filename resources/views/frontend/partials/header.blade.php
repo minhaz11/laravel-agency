@@ -37,7 +37,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <a href="index.html" class="logo">
-                        <img src="./assets/images/logo/logo.png" alt="logo">
+                        <img src="{{logo()['logo']}}" alt="logo">
                 </a>
                 <div class="header-bar d-lg-none">
                     <span></span>

@@ -29,6 +29,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     //General Setting
     Route::get('/site-setting', 'SettingController@index')->name('setting');
     Route::post('/site-setting', 'SettingController@update');
+    Route::get('/logo-setting', 'SettingController@logo')->name('logo');
+    Route::post('/logo-setting', 'SettingController@logoUpdate');
 
     //manage section
     Route::get('/manage-section/{key}', 'ManageSectionController@index')->name('manage.section');
@@ -41,6 +43,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::post('/store-clients', 'ManageSectionController@clientElements')->name('store.clients');
     Route::get('/remove-clients/{id}', 'ManageSectionController@removeClientElements')->name('remove.clients');
+
+    Route::get('/remove-how/{id}', 'ManageSectionController@removeHow')->name('remove.how');
+    Route::get('/remove-partner/{file}', 'ManageSectionController@removePartner')->name('remove.partner');
+
+    //manage project
+    
+    Route::get('/manage-projects', 'ProjectController@projects')->name('manage.projects');
 });
 
 

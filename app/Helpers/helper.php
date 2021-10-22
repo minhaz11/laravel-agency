@@ -18,9 +18,28 @@ function activeLink($routeName)
         return 'active';
     }
 }
+
+function subMenu($url)
+{
+   // dd($url,request()->is($url));
+    if(request()->is($url)){
+        return 'active';
+    }
+}
+
 function setting()
 {
     return SiteSetting::first();
+}
+
+function logo()
+{
+    $setting = SiteSetting::first();
+    return [
+        'logo'=> asset('public/assets/images/logo/'.$setting->logo),
+        'logo_dark'=> asset('public/assets/images/logo/'.$setting->logo_dark),
+        'fav'=>asset('public/assets/images/logo/'.$setting->favicon),
+      ];
 }
 
 //moveable

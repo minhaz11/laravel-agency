@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('public/assets/frontend')}}/css/owl.min.css">
     <link rel="stylesheet" href="{{asset('public/assets/frontend')}}/css/main.css">
 
-    <link rel="shortcut icon" href="{{asset('public/assets/frontend')}}/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{logo()['fav']}}" type="image/x-icon">
 
 </head>
 <body>

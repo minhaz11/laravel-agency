@@ -70,7 +70,7 @@
                                     </div>
 
                                 <div class="d-flex justify-content-between mt-4">
-                                    <h4 class="card-title">Services</h4>
+                                    <h4 class="card-title">Elements</h4>
                                     <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary me-1 mb-3">Add New</a>
 
                                    </div>
