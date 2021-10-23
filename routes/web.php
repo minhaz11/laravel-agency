@@ -47,9 +47,19 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/remove-how/{id}', 'ManageSectionController@removeHow')->name('remove.how');
     Route::get('/remove-partner/{file}', 'ManageSectionController@removePartner')->name('remove.partner');
 
+    //manage Category
+    Route::get('/manage-categories', 'CategoryController@index')->name('manage.categories');
+    Route::post('/store-category', 'CategoryController@store')->name('store.category');
+    Route::post('/update-category', 'CategoryController@update')->name('update.category');
+
     //manage project
-    
     Route::get('/manage-projects', 'ProjectController@projects')->name('manage.projects');
+    Route::get('/create-project', 'ProjectController@create')->name('project.create');
+    Route::post('/store-project', 'ProjectController@store')->name('project.store');
+    Route::get('/edit-project/{id}', 'ProjectController@edit')->name('project.edit');
+    Route::post('/update-project', 'ProjectController@update')->name('project.update');
+    Route::post('project-remove/{id}', 'ProjectController@remove')->name('project.remove');
+    
 });
 
 

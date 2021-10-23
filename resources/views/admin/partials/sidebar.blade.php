@@ -21,7 +21,13 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item @link('manage.projects') ">
+                <li class="sidebar-item @link('manage.categories') ">
+                    <a href="@route('manage.categories')" class='sidebar-link'>
+                        <i class="bi bi-layers-half"></i>
+                        <span>Manage Categories</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @link(['manage.projects','project.create','project.edit']) ">
                     <a href="@route('manage.projects')" class='sidebar-link'>
                         <i class="bi bi-kanban"></i>
                         <span>Manage Projects</span>
